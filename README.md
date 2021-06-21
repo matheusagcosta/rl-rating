@@ -1,4 +1,4 @@
-# rl-sentiment
+# rl-rating
 
 ## Project setup
 ```
