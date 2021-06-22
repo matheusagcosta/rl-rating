@@ -43,7 +43,7 @@ export default defineComponent({
   -webkit-appearance: none;
   appearance: none;
   background: var(--light-color);
-  border: 0px solid black;
+  border: 0px solid var(--dark-color);
   opacity: 0;
   height: 20px;
   width: 20px;
@@ -62,7 +62,7 @@ export default defineComponent({
     width: 20px;
     background: var(--light-color);
     border-radius: 50%;
-    box-shadow: 0 0 3px 0 rgba(black, .5);
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, .5);
     cursor: pointer;
     left: 50%;
     position: absolute;

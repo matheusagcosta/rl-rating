@@ -20,22 +20,22 @@
         v-model="rating"
       ></rating>
     </div>
-    <span class="alert" style="--alert--bg: #bf6358;" v-if="rating === 0">
+    <span class="alert" style="--alert-bg: #bf6358;" v-if="rating === 0">
       Not a Match. 😞
     </span>
-    <span class="alert" style="--alert--bg: #d17e30;" v-else-if="rating === 25">
+    <span class="alert" style="--alert-bg: #d17e30;" v-else-if="rating === 25">
       Small Fit. 😕
     </span>
-    <span class="alert" style="--alert--bg: #E6A942;" v-else-if="rating === 50">
+    <span class="alert" style="--alert-bg: #E6A942;" v-else-if="rating === 50">
       Intermidiate. 😐
     </span>
-    <span class="alert" style="--alert--bg: #58d593;" v-else-if="rating === 75">
+    <span class="alert" style="--alert-bg: #58d593;" v-else-if="rating === 75">
       Good Fit 😀
     </span>
-    <span class="alert" style="--alert--bg: #00c14f;" v-else-if="rating === 100">
+    <span class="alert" style="--alert-bg: #00c14f;" v-else-if="rating === 100">
       Perfect Match! 😍
     </span>
-    <span class="alert" style="--alert--bg: #abb7b7;" v-else>
+    <span class="alert" style="--alert-bg: #abb7b7;" v-else>
       No Rating yet...
     </span>
   </main>
@@ -61,9 +61,10 @@ export default defineComponent({
 <style lang="scss">
 
 :root {
-  --alert--bg: #abb7b7;
-  --body--bg: #EFF1F4;
+  --alert-bg: #abb7b7;
+  --body-bg: #EFF1F4;
   --light-color: #FFF;
+  --dark-color: #000;
   --slider-bg: #888;
   --text-color: #2c3e50;
   --main-width: 600px;
@@ -74,7 +75,7 @@ export default defineComponent({
 }
 
 body {
-  background-color: var(--body--bg);
+  background-color: var(--body-bg);
   line-height: 1.6;
 }
 
@@ -99,7 +100,7 @@ label {
 }
 
 .alert {
-  background: var(--alert--bg);
+  background: var(--alert-bg);
   border-radius: 4px;
   color: var(--light-color);
   font-weight: bold;
