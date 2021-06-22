@@ -21,7 +21,7 @@
       ></rating>
     </div>
     <span class="alert" style="--alert--bg: #bf6358;" v-if="rating === 0">
-      Not a Match. 💔
+      Not a Match. 😞
     </span>
     <span class="alert" style="--alert--bg: #d17e30;" v-else-if="rating === 25">
       Small Fit. 😕
@@ -33,7 +33,7 @@
       Good Fit 😀
     </span>
     <span class="alert" style="--alert--bg: #00c14f;" v-else-if="rating === 100">
-      Perfect Match! 🎉
+      Perfect Match! 😍
     </span>
     <span class="alert" style="--alert--bg: #abb7b7;" v-else>
       No Rating yet...

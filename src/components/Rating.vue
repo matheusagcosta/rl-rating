@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="rating__holder">
+    <span class="rating__dot" v-bind:style="{ left: modelValue + '%'}"></span>
     <input class="rating__slider" type="range" min="0" max="100" step="25"
            :value="modelValue"
            @input="$emit('update:modelValue', parseInt($event.target.value))"
@@ -38,7 +39,38 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@mixin rating-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--light-color);
+  border: 0px solid black;
+  opacity: 0;
+  height: 20px;
+  width: 20px;
+}
+
 .rating {
+
+  &__holder {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &__dot {
+    height: 20px;
+    width: 20px;
+    background: var(--light-color);
+    border-radius: 50%;
+    box-shadow: 0 0 3px 0 rgba(black, .5);
+    cursor: pointer;
+    left: 50%;
+    position: absolute;
+    pointer-events: none;
+    top: -3px;
+    transform: translateX(-25%);
+    will-change: left;
+  }
 
   &__slider {
     -webkit-appearance: none;
@@ -54,16 +86,45 @@ export default defineComponent({
     width: 100%;
   }
 
+  &__slider::-webkit-slider-thumb {
+    @include rating-thumb;
+  }
+
+  &__slider::-ms-thumb {
+    @include rating-thumb;
+  }
+
+  &__slider::-moz-range-thumb {
+    @include rating-thumb;
+  }
+
   &__steps {
     display: flex;
     justify-content: space-between;
     margin-left: -10px;
+    padding-top: 1rem;
     width: calc(100% + 20px);
   }
 
   &__step {
     text-align: center;
     width: 30px;
+  }
+
+  &__step:nth-child(2) {
+    transform: translateX(5%);
+  }
+
+  &__step:nth-child(3) {
+    transform: translateX(10%);
+  }
+
+  &__step:nth-child(4) {
+    transform: translateX(20%);
+  }
+
+  &__step:nth-child(5) {
+    transform: translateX(25%);
   }
 }
 
